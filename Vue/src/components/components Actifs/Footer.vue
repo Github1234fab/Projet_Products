@@ -1,21 +1,26 @@
 <template>
   <footer>
-    <h2 class="title">Sugar Hill Gang</h2>
+<div class="test">Affectiv GANG</div>
   </footer>
 </template>
 
-<script></script>
+<script>
+// export default {}
+</script>
+
 <style>
 footer {
-  height: 200px;
+    /* position: relative; */
+  height: 150px;
   width: 100%;
-  background-color: black;
+  background-color: rgb(206, 164, 105);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.title {
-  font-size: 106px;
-  color: white;
- display: flex;
- align-content: center;
-margin-top: 40px;
+.test{
+    color: white;
+    font-size: 28px;
 }
+
 </style>
