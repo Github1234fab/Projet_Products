@@ -12,7 +12,7 @@ footer {
   background-color: black;
 }
 .title {
-  font-size: 16px;
+  font-size: 106px;
   color: white;
  display: flex;
  align-content: center;
