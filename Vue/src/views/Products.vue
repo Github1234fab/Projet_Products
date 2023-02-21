@@ -1,27 +1,33 @@
 <template>
-    <div class="main">
+    <!-- <div class="main">
   <h1>Products</h1>
-  <div :key="index" v-for="(nom, index) in nom">
-    <div class="names">{{ nom.title }}</div>
+  <div :key="index" v-for="(infos, index) in infos">
+    <div class="names">{{ infos.price }}</div>
+    <img :src = "infos.image" alt="">
   </div>
-  </div>
+  </div> -->
+<h1>Products</h1>
+<Card></Card>
+
 </template>
 
 <script>
-import axios from "axios";
-export default {
-  data() {
-    return {
-      nom: null,
-    };
-  },
-  mounted() {
-    axios.get("https://fakestoreapi.com/products").then((reponse) => {
-      this.nom = reponse.data;
-      console.log(this.nom);
-    });
-  },
-};
+import Card from "../components/components Actifs/Card.vue"
+// import axios from "axios";
+// export default {
+      components: {
+Card
+  }
+//   data() {
+//     return {
+//       infos: null,
+//     };
+//   },
+//   mounted() {
+//       axios.get("https://fakestoreapi.com/products").then((reponse) => {
+//           this.infos = reponse.data; console.log(this.infos);});
+//   },
+// };
 </script>
 
 <style>

@@ -5,7 +5,7 @@
       <a href="/">Home</a>
       <a href="/A_propos">About</a>
       <a href="/products">Products</a>
-      <!-- <a href="Panier">Panier</a> -->
+      <a href="/Card">Card</a>
     </nav>
   </header>
 </template>
