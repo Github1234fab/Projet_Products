@@ -1,6 +1,6 @@
 <template>
   <footer>
-<div class="test">Affectiv GANG</div>
+<div class="test">Product Project</div>
   </footer>
 </template>
 

@@ -1,6 +1,7 @@
 <template>
   <header>
   <div class="logo"></div>
+  <h1 class="market">Market Super Place</h1>
     <nav>
       <a href="/">Home</a>
       <a href="/A_propos">About</a>
@@ -38,5 +39,10 @@ a{
   width: 20px;
   background-color: aqua;
     margin-left: 50px;
+}
+.market{
+  font-family: Poppins;
+  color: rgb(3, 3, 64);
+  font-size: 24px;
 }
 </style>
