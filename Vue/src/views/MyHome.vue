@@ -16,11 +16,11 @@
 .cube {
   height: 500px;
 }
-h1 {
+/* h1 {
   font-size: 45px;
   color: black;
-}
-h1 {
+} */
+/* h1 {
     text-align: center;
   position: absolute;
     top: 50%; 
@@ -45,5 +45,5 @@ h1 {
     1px 22px 10px rgba(16,16,16,0.2),
     1px 25px 35px rgba(16,16,16,0.2),
     1px 30px 60px rgba(16,16,16,0.4);
-}
+} */
 </style>
