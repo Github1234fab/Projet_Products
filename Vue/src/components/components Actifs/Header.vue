@@ -1,7 +1,7 @@
 <template>
   <header>
-  <div class="logo"></div>
-  <h1 class="market">Market Super Place</h1>
+    <div class="logo"><i class="fa-solid fa-store fa-2xl"></i></div>
+    <h1 class="title_appli">The SuperMarket </h1>
     <nav>
       <a href="/">Home</a>
       <a href="/A_propos">About</a>
@@ -19,10 +19,11 @@
 header {
   height: 150px;
   width: 100%;
-  background-color: antiquewhite;
+  background: linear-gradient( rgb(121, 55, 93), rgb(139, 54, 64));
   display: flex;
   justify-content: space-between;
   align-items: center;
+  align-content: center;
 }
 nav {
   display: flex;
@@ -31,18 +32,13 @@ nav {
   font-size: 16px;
   margin-right: 50px;
 }
-a{
+a {
+    font-family: poppins;
   text-decoration: none;
+  color: white;
 }
-.logo{
-  height: 20px;
-  width: 20px;
-  background-color: aqua;
-    margin-left: 50px;
-}
-.market{
-  font-family: Poppins;
-  color: rgb(3, 3, 64);
-  font-size: 24px;
+.logo {
+  margin-left: 50px;
+  color: white;
 }
 </style>

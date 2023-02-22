@@ -13,11 +13,6 @@ export default {
 Header, Footer
   }
 }
-
-
 </script>
-
-
 <style>
-
 </style>

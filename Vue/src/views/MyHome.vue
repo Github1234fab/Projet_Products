@@ -12,6 +12,8 @@
 .main {
   height: 100%;
   background-color: antiquewhite;
+  display: flex;
+  flex-grow: 1;
 }
 .cube {
   height: 500px;

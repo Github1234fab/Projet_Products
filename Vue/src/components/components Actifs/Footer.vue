@@ -10,7 +10,7 @@
 
 <style>
 footer {
-    /* position: relative; */
+  margin-top: auto;
   height: 150px;
   width: 100%;
   background-color: rgb(206, 164, 105);
