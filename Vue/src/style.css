@@ -13,7 +13,7 @@
     transform: translate(50%,-50%); */
     text-transform: uppercase;
     font-family: verdana;
-    font-size: 30px;
+    font-size: 22px;
     font-weight: 700;
     color: #f5f5f5;
     /* text-shadow: 1px 1px 1px #919191,
@@ -32,4 +32,14 @@
     1px 22px 30px rgba(16,16,16,0.4);
 }  */
 }
+
+
+
+@media (min-width: 230px), (max-width: 939px) {
+    .title_appli{
+        font-size: 16px;
+    }
+}
+
+
 

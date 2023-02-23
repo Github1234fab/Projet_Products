@@ -20,16 +20,16 @@
       <!-- COLLAPSE BS --------------------------------------------------------------------------- -->
       <h2 class="price">{{ product.price }} €</h2>
       <div class="rating">
-        <span>{{ product.rate }}</span>
-        <span>{{ product.count }}</span>
+        <span class="rate">{{ product.rate }}</span>
+        <span class="count">{{ product.count }}</span>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-// import { stringifyExpression } from "@vue/compiler-core";
-// import { createDOMCompilerError } from "@vue/compiler-dom";
+import { stringifyExpression } from "@vue/compiler-core";
+import { createDOMCompilerError } from "@vue/compiler-dom";
 export default {
   name: "Card",
   props: {
@@ -51,7 +51,7 @@ export default {
   border: solid 1px grey;
   padding: 5px;
 }
-.container_card {
+/* .container_card {
   height: 100%;
   display: flex;
   gap: 20px;
@@ -59,7 +59,7 @@ export default {
   margin-top: 20px;
   justify-content: center;
   margin-bottom: 20px;
-}
+} */
 .card {
   box-shadow: 0px 0px 8px -3px rgb(74, 72, 72);
   background-color: rgb(255, 255, 255);
@@ -102,8 +102,18 @@ export default {
   width: 80px;
   margin-bottom: 15px;
 }
-.rating {
+.rate {
   font-size: 14px;
   font-family: poppins;
+  height: 30px;
+  color: black;
+  width: 100%;
+}
+.count {
+  font-size: 14px;
+  font-family: poppins;
+  height: 30px;
+  color: black;
+  width: 100%;
 }
 </style>

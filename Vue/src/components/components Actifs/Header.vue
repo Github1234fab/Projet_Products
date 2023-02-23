@@ -1,7 +1,7 @@
 <template>
   <header>
     <div class="logo"><i class="fa-solid fa-store fa-2xl"></i></div>
-    <h1 class="title_appli">The SuperMarket </h1>
+    <h1 class="title_appli">The Super Grocery Store </h1>
     <nav>
       <a href="/">Home</a>
       <a href="/A_propos">About</a>
