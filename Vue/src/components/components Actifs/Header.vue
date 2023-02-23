@@ -19,7 +19,7 @@
 header {
   height: 150px;
   width: 100%;
-  background: linear-gradient( rgb(121, 55, 93), rgb(139, 54, 64));
+  background: linear-gradient(  rgb(139, 54, 64 ), rgb(121, 55, 93));
   display: flex;
   justify-content: space-between;
   align-items: center;
