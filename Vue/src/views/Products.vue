@@ -1,7 +1,6 @@
 <template>
   <div class="wrapper">
     <div class="content">
-      <h1>Products</h1>
       <div class="product-list">
         <Card v-for="(product, index) in products" :key="index" :product="product" />
       </div>

@@ -1,16 +1,18 @@
 <template>
   <div class="container_card">
     <div class="card">
+      <img class="image" :src="'https://' + product.imageUrl" alt="image de produits" />
       <h1 class="title">{{ product.brandName }}</h1>
-      <h2 class="category">{{ product.color }}</h2>
-      <img class="image" :src="product.url" alt="image de produits" />
+      <h2 class="colour">{{ product.colour }}</h2>
+      <h2 class="price">{{ product.price.current.text }} €</h2>
+
       <!-- COLLAPSE BS --------------------------------------------------------------------------- -->
-      <div class="accordion" id="accordionExample">
+      <div class="accordion" :id="'accordionExample-' + product.id">
         <div class="accordion-item">
-          <h2 class="accordion-header" id="headingOne">
-            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Description</button>
+          <h2 class="accordion-header" :id="'headingOne-' + product.id">
+            <button class="accordion-button text-body bg-light shadow" type="button" :aria-controls="'collapseOne-' + product.id">Description</button>
           </h2>
-          <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+          <div :id="'collapseOne-' + product.id" class="accordion-collapse collapse" :aria-labelledby="'headingOne-' + product.id" :data-parent="'#accordionExample-' + product.id">
             <div class="accordion-body">
               {{ product.name }}
             </div>
@@ -18,18 +20,11 @@
         </div>
       </div>
       <!-- COLLAPSE BS --------------------------------------------------------------------------- -->
-      <h2 class="price">{{ product.price.current.text }} €</h2>
-      <div class="rating">
-        <span class="rate">{{ product.rate }}</span>
-        <span class="count">{{ product.count }}</span>
-      </div>
     </div>
   </div>
 </template>
 
 <script>
-import { stringifyExpression } from "@vue/compiler-core";
-import { createDOMCompilerError } from "@vue/compiler-dom";
 export default {
   name: "Card",
   props: {
@@ -38,31 +33,38 @@ export default {
       required: true,
     },
   },
+  mounted() {
+    const button = this.$el.querySelector(`#headingOne-${this.product.id} button`);
+    const collapse = this.$el.querySelector(`#collapseOne-${this.product.id}`);
+    button.addEventListener("click", () => {
+      collapse.classList.toggle("show");
+    });
+  },
 };
 </script>
 
 <style>
+.accordion {
+  width: 100%;
+  height: 100%;
+}
 .accordion-item {
   border: none;
+  width: 100%;
+}
+.accordion-header {
+  width: 100%;
 }
 .accordion-button {
-  width: 150px;
-  margin-top: 10px;
-  border: solid 1px grey;
   padding: 5px;
   color: white;
-  background: linear-gradient(rgb(139, 54, 64), rgb(121, 55, 93));
-  text-align: center;
+  padding: 10px;
+  width: 100%;
+  /* background: linear-gradient(113.5deg, rgb(234, 234, 234) 22.3%, rgb(201, 234, 211) 56.6%, rgb(255, 180, 189) 90.9%); */
+  font-family: poppins;
+  color: black;
 }
-/* .container_card {
-  height: 100%;
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-  margin-top: 20px;
-  justify-content: center;
-  margin-bottom: 20px;
-} */
+
 .card {
   box-shadow: 0px 0px 8px -3px rgb(74, 72, 72);
   background-color: rgb(255, 255, 255);
@@ -80,7 +82,7 @@ export default {
 }
 .title {
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 400;
   margin-top: 10px;
   font-family: poppins;
 }
@@ -95,29 +97,19 @@ export default {
   font-family: Cambria, serif;
   font-family: poppins;
   margin-bottom: 15px;
-  background: linear-gradient(rgb(139, 54, 64), rgb(121, 55, 93));
+  background-color: lightGrey;
 }
-.category {
+.colour {
   font-size: 14px;
   font-family: poppins;
+  font-weight: 300;
+  text-transform: lowerCase;
 }
 .image {
-  height: 80px;
-  width: 80px;
-  margin-bottom: 15px;
-}
-.rate {
-  font-size: 14px;
-  font-family: poppins;
-  height: 30px;
-  color: black;
-  width: 100%;
-}
-.count {
-  font-size: 14px;
-  font-family: poppins;
-  height: 30px;
-  color: black;
-  width: 100%;
+  height: 265px;
+  width: 265px;
+  border-radius: 15px;
+  margin-top: -15px;
+  object-fit: cover;
 }
 </style>
