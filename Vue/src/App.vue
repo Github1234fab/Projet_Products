@@ -6,7 +6,7 @@
 
 <script>
 import Header from './components/components Actifs/Header.vue';
-import Footer from './components/components Actifs/Footer.vue'
+import Footer from './components/components Actifs/Footer.vue';
 export default {
   name: "App",
   components: {

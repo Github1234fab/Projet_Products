@@ -1,8 +1,8 @@
 import { createRouter, createWebHistory } from "vue-router";
-import MyHome from "../views/MyHome.vue"
-import About from "../views/About.vue"
-import Products from "../views/Products.vue"
-import Card from "../components/components Actifs/Card.vue"
+import MyHome from "../views/MyHome.vue";
+import About from "../views/About.vue";
+import Products from "../views/Products.vue";
+import Card from "../components/components Actifs/Card.vue";
 
 const router = createRouter({
   history: createWebHistory(),

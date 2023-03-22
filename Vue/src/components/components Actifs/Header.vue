@@ -8,16 +8,43 @@
       <a href="/products">Products</a>
       <a href="/Card">Card</a>
     </nav>
+     <!-- <div class="input_container">
+    <input v-model="searchKey" type="search" name="search-product" placeHolder="Recherchez un produit" class="search_input" autocomplete="off" />
+  </div> -->
   </header>
 </template>
 
-<script>
-// export default {}
-</script>
+// <script>
+// export default {
+//     data() {
+//     return {
+//       searchKey: "",
+//     };
+//   },
+//     computed: {
+//     searchProducts() {
+//       return this.products.filter((product) => {
+//         return product.title.toLowerCase().includes(this.searchKey.toLowerCase());
+//       });
+//     },
+//   },
+//     mounted() {
+//     axios
+//       .get("https://fakestoreapi.com/products")
+//       .then((response) => {
+//         this.products = response.data;
+//         console.log(this.products);
+//       })
+//       .catch((error) => {
+//         console.log(error);
+//       });
+//   },
+// }
+// </script>
 
 <style>
 header {
-  height: 150px;
+  height: 80px;
   width: 100%;
   background: linear-gradient(  rgb(139, 54, 64 ), rgb(121, 55, 93));
   display: flex;
@@ -41,4 +68,13 @@ a {
   margin-left: 50px;
   color: white;
 }
+.title_appli {
+  margin: auto;
+  text-transform: uppercase;
+  font-family: verdana;
+  font-size: 22px;
+  font-weight: 700;
+  color: #f5f5f5;
+} 
+
 </style>

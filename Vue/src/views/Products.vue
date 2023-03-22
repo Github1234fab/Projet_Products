@@ -2,17 +2,11 @@
   <div class="wrapper">
     <div class="content">
       <h1>Products</h1>
- <div class="product-list">
-      <Card
-        v-for="(product, index) in products"
-        :key="index"
-        :product="product"
-      />
-            </div>
+      <div class="product-list">
+        <Card v-for="(product, index) in products" :key="index" :product="product" />
       </div>
-      </div>
-        
-   
+    </div>
+  </div>
 </template>
 
 <script>
@@ -30,22 +24,41 @@ export default {
     };
   },
   mounted() {
-    axios.get("https://fakestoreapi.com/products")
-      .then((response) => {
-      this.products = response.data;
+    const options = {
+      method: "GET",
+      url: "https://asos2.p.rapidapi.com/products/v2/list",
+      params: {
+        store: "US",
+        offset: "0",
+        categoryId: "4209",
+        limit: "48",
+        country: "US",
+        sort: "freshness",
+        currency: "USD",
+        sizeSchema: "US",
+        lang: "en-US",
+      },
+      headers: {
+        "X-RapidAPI-Key": "091a7623a2mshfe940e4a900ef7bp1a0aa8jsn21d9e18b7442",
+        "X-RapidAPI-Host": "asos2.p.rapidapi.com",
+      },
+    };
+
+  axios.request(options)
+ .then((response) => {
+      this.products = response.data.products;
       console.log(this.products);
       })
       .catch(error => {
         console.log(error);
       });
-    },
+  },
 };
-
 </script>
 
 <style>
-.product-list{
-   height: 100%;
+.product-list {
+  height: 100%;
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
@@ -61,7 +74,6 @@ export default {
 .content {
   flex-grow: 1;
 }
-
 h1 {
   font-size: 16px;
 }

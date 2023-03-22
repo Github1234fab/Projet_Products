@@ -1,9 +1,9 @@
 <template>
   <div class="container_card">
     <div class="card">
-      <h1 class="title">{{ product.title }}</h1>
-      <h3 class="category">{{ product.category }}</h3>
-      <img class="image" :src="product.image" alt="image de produits" />
+      <h1 class="title">{{ product.brandName }}</h1>
+      <h2 class="category">{{ product.color }}</h2>
+      <img class="image" :src="product.url" alt="image de produits" />
       <!-- COLLAPSE BS --------------------------------------------------------------------------- -->
       <div class="accordion" id="accordionExample">
         <div class="accordion-item">
@@ -12,13 +12,13 @@
           </h2>
           <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
             <div class="accordion-body">
-              {{ product.description }}
+              {{ product.name }}
             </div>
           </div>
         </div>
       </div>
       <!-- COLLAPSE BS --------------------------------------------------------------------------- -->
-      <h2 class="price">{{ product.price }} €</h2>
+      <h2 class="price">{{ product.price.current.text }} €</h2>
       <div class="rating">
         <span class="rate">{{ product.rate }}</span>
         <span class="count">{{ product.count }}</span>
@@ -45,11 +45,14 @@ export default {
 .accordion-item {
   border: none;
 }
-
 .accordion-button {
+  width: 150px;
   margin-top: 10px;
   border: solid 1px grey;
   padding: 5px;
+  color: white;
+  background: linear-gradient(rgb(139, 54, 64), rgb(121, 55, 93));
+  text-align: center;
 }
 /* .container_card {
   height: 100%;
@@ -92,6 +95,7 @@ export default {
   font-family: Cambria, serif;
   font-family: poppins;
   margin-bottom: 15px;
+  background: linear-gradient(rgb(139, 54, 64), rgb(121, 55, 93));
 }
 .category {
   font-size: 14px;
